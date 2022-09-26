@@ -49,9 +49,6 @@ app.use('/api/v1/orders', orderRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/checkout', flutterwaveRouter);
 
-app.use(notFoundMiddleware);
-app.use(errorHandlerMiddleware);
-
 // Serve frontend
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')));
@@ -64,6 +61,9 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   app.get('/', (req, res) => res.send('Please set to production'));
 }
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
 
 /* port */
 const port = process.env.PORT || 5000;
