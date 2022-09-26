@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon backend/server.js",
-    "build": "webpack"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "heroku-run-build-script": true,
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -27,8 +26,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  },
-  "engines": {
-    "node": "14.x"
   }
 }
