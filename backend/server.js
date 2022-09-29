@@ -35,9 +35,13 @@ app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
-        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'script-src': ["'self'", "'unsafe-inline'", 'example.com'],
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'", 'example.com'],
+        objectSrc: ["'none'"],
+        upgradeInsecureRequests: [],
+        frameSrc: ["'self'"],
       },
+      reportOnly: true,
     },
   })
 );
