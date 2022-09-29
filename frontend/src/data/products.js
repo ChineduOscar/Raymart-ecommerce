@@ -13,7 +13,7 @@ const products = [
   {
     _id: 1,
     category: 'Phones',
-    name: 'Apple Iphone 13 - 128GB ROM - 4GB ROM - 3240mAh',
+    name: 'Apple Iphone 13 - 128GB ROM',
     brand: 'Apple',
     image: '/images/apple-iphone-13.png',
     price: 509900,

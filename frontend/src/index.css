@@ -252,7 +252,6 @@ p {
 .main-menu {
   padding: 0.1rem 0.5rem;
   font-size: 0.95rem;
-  font-weight: 600;
   margin-top: 0.2rem;
   background-color: var(--clr-white);
   display: flex;
@@ -429,9 +428,9 @@ p {
 .product-elements > img {
   inline-size: 100%;
   aspect-ratio: 1/1;
-  object-fit: cover;
-  max-width: 9rem;
-  max-height: 9rem;
+  object-fit: contain;
+  width: 7rem;
+  height: 9rem;
 }
 
 .discount {
@@ -458,8 +457,8 @@ p {
     grid-auto-columns: 29%;
   }
   .product-elements > img {
-    max-width: 8rem;
-    max-height: 8rem;
+    width: 8rem;
+    height: 8rem;
   }
   .container {
     margin: 1rem 1rem;
@@ -481,8 +480,8 @@ p {
   }
   .product-elements > img,
   .product-images {
-    max-width: 10rem;
-    max-height: 10rem;
+    width: 10rem;
+    height: 10rem;
   }
   .container {
     margin: 1rem 3rem;
@@ -842,7 +841,7 @@ p {
   margin: auto;
   align-items: center;
   justify-content: center;
-  max-width: 7rem;
+  width: 7rem;
 }
 .email-suscription > button:hover {
   color: var(--clr-black);

@@ -30,14 +30,17 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 
 /* middleware */
 app.set('trust proxy', 1);
+app.use(express.json());
 app.use(
-  rateLimiter({
-    windowMs: 15 * 60 * 1000,
-    max: 60,
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'script-src': ["'self'", "'unsafe-inline'", 'example.com'],
+      },
+    },
   })
 );
-app.use(express.json());
-app.use(helmet());
 app.use(cors());
 app.use(xss());
 
