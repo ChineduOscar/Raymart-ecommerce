@@ -16,7 +16,7 @@ const Cart = () => {
 
   // configuration for flutterwave payment method
   const config = {
-    public_key: 'FLWPUBK_TEST-98bfa797daa24fd6f4256ee998b5b248-X',
+    public_key: 'FLWPUBK_TEST-3fb9f9da4614692ba80ffb29a4ea16a6-X',
     tx_ref: txRef ? txRef : Date.now(),
     amount: total,
     currency: 'NGN',

@@ -655,6 +655,9 @@ p {
   padding: 0 1rem 1rem 1rem;
   width: 100%;
 }
+.back-btn {
+  margin-right: 1rem;
+}
 .checkout-btn,
 .back-btn {
   margin-top: 1rem;
