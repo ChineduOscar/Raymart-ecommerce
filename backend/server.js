@@ -33,16 +33,7 @@ app.set('trust proxy', 1);
 app.use(express.json());
 app.use(
   helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'", 'example.com'],
-        objectSrc: ["'none'"],
-        upgradeInsecureRequests: [],
-        frameSrc: ["'self'"],
-      },
-      reportOnly: true,
-    },
+    contentSecurityPolicy: false,
   })
 );
 app.use(cors());
