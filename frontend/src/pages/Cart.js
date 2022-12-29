@@ -46,19 +46,23 @@ const Cart = () => {
     }
   };
 
-  const handleCheckout = () => {
-    toTop();
-    if (!user) {
-      navigate('/login');
-    } else {
-      handleFee();
-      handleFlutterPayment({
-        callback: (response) => {
-          console.log(response);
-          closePaymentModal(); // this will close the modal programmatically
-        },
-        onClose: () => {},
-      });
+  const handleCheckout = async () => {
+    try {
+      toTop();
+      if (!user) {
+        navigate('/login');
+      } else {
+        await handleFee();
+        handleFlutterPayment({
+          callback: (response) => {
+            console.log(response);
+            closePaymentModal(); // this will close the modal programmatically
+          },
+          onClose: () => {},
+        });
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -146,7 +150,10 @@ const Cart = () => {
             back
           </button>
 
-          <button onClick={handleCheckout} className='checkout-btn button'>
+          <button
+            onClick={() => handleCheckout()}
+            className='checkout-btn button'
+          >
             checkout
           </button>
         </div>
